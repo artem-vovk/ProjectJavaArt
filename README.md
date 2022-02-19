@@ -1,2 +1,0 @@
-# ProjectJavaArt
-Это учебный проект
