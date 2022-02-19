@@ -1,0 +1,211 @@
+<html>
+<head>
+<title>Main.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #0033b3;}
+.s1 { color: #080808;}
+.s2 { color: #067d17;}
+.s3 { color: #1750eb;}
+.s4 { color: #8c8c8c; font-style: italic;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+Main.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.company;</span>
+
+<span class="s0">import </span><span class="s1">java.util.Locale;</span>
+<span class="s0">import </span><span class="s1">java.util.Scanner;</span>
+
+<span class="s0">public class </span><span class="s1">Main {</span>
+    <span class="s0">public static void </span><span class="s1">main(String[] args) {</span>
+        <span class="s1">String originalString = </span><span class="s2">&quot;Привет! Я - новая строка&quot;</span><span class="s1">;</span>
+        <span class="s1">String[] arrraySrting = </span><span class="s0">new </span><span class="s1">originalString.toStringArray();</span>
+        <span class="s1">System.out.println(arrraySrting[</span><span class="s3">1</span><span class="s1">]);</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+
+
+
+
+
+
+<span class="s4">/* 
+ 
+// вытягиваем из одной строки в другую элемент с четным индексом 
+        String originalString = &quot;012345678923456789&quot;; // стартовая строка 
+        StringBuilder newString = new StringBuilder(); // создаем новую строкув стрингбилдере 
+        for (int i = 0; i &lt; originalString.length(); i += 2) { // запускаем цикл с шагом через один элемент 
+            newString.append(originalString.charAt(i)); // дозаписываем данные в новую строку из циклом с шагом два 
+        } 
+        System.out.println(newString.toString()); // выводим на печать + проводим toString - Это наверное чтобы окночательно создать строку на базе стрингбилдера 
+ 
+    } 
+} 
+ 
+ */</span>
+
+
+
+
+
+        <span class="s4">/* 
+        Scanner scanner = new Scanner(System.in); 
+        System.out.println(&quot;Enter your word: &quot;); 
+        String word = scanner.nextLine(); 
+        System.out.println(word); 
+        System.out.println(getModiffString(word)); 
+    } 
+ 
+    private static String getModiffString(String sourceStr) { 
+        StringBuilder charBox = new StringBuilder(); 
+        int counter = 0; 
+        while (counter &lt; sourceStr.length()) { 
+            charBox.append(sourceStr.charAt(counter)); 
+            counter += 2; 
+        } 
+        return charBox.toString(); 
+    } 
+} 
+ 
+ 
+         */</span>
+
+     <span class="s4">/* Определяем середину строки и выводим на печать, если нечетное число символов, то выводим 1 символ, четное - 2 символа 
+ 
+        System.out.println(&quot;A       --&gt; &quot; + getMiddleString(&quot;A&quot;)); 
+        System.out.println(&quot;AB      --&gt; &quot; + getMiddleString(&quot;AB&quot;)); 
+        System.out.println(&quot;ABCDEFG --&gt; &quot; + getMiddleString(&quot;ABCDEG&quot;)); 
+    } 
+    private static String getMiddleString(String str) { // этим методом мы проводим вычисление и возвращаем данные в прошлый метод для вывода на печать 
+        if (str.length() &lt;= 2) { // указываем, что если строка имеет два и менее символа, то просто выводим эти символы и все 
+            return str; 
+        } else { // если знаков в строке болье 2-х, тогда продолжаем 
+            int beginIndex = (str.length() - 1) / 2; // опредеяем начальный индекс 
+            int endIndex = beginIndex + 2 - (str.length() % 2); // определяем конечный индекс 
+            return str.substring(beginIndex, endIndex); // возвращаем субстринг 1 или 2 буквы из середины строки 
+        } 
+    } 
+} 
+ 
+*/</span>
+
+<span class="s4">/* просто возвращаем тру если строки совпадают и если строки пустые - тоже тру 
+        String firstString = &quot;ddd&quot;; 
+        String secondString = &quot;555&quot;; 
+        if (firstString == null &amp;&amp; secondString == null) { // если обе строки НУЛЬ - то тру 
+        return true; 
+    } else if (firstString == null || secondString == null) { // если одна из строк НУЛЬ, то фальс 
+        return false; 
+    } else if (firstString.length() == 0 &amp;&amp; secondString.length() == 0) { // если строка пустая , то тру 
+        return true; 
+    } else { 
+        return firstString.equals(secondString); // возвращаем результат сравнения 
+    } 
+} 
+} 
+*/</span>
+        <span class="s4">/* делаем абривиатуру из первых букв слов в строке 
+ 
+ 
+        String fullName = &quot;Юридическое агентство Щит и Меч&quot;; 
+        String firstLetter = fullName.substring(0, 1); // определили первую букву первого слова 
+        String abrv = firstLetter;  // 1 шаг - создали новую строку = в которую мы будем дозаписывать первые буквы найденные в цикле 
+        char[] fullName2 = fullName.toCharArray(); // сделали масив из строки 
+        for (char i = 0; i &lt; fullName2.length; i++) { // 2 запустили цикл 
+            if (fullName2[i] == ' ') { // определили индекс едемента - первой букві каждого слова после пробела 
+                char nextLetter = fullName2[i + 1];  // сразу вывели букву в соответствующую переменную 
+                abrv += nextLetter; // дописать в строку abrv букву из цикла 
+                // меняли тип данных не нужно 
+            } 
+        } 
+        abrv = abrv.toUpperCase(); // после цикла сделать все буквы заглавными 
+        System.out.println(abrv); // вернуть цикл в метод / а здесь можно просто вывести на печать 
+    } 
+} 
+ 
+*/</span>
+
+
+      <span class="s4">/*  int indexLetter = fullName.indexOf(' '); 
+ 
+        char[] fullName2 = fullName.toCharArray(); // преобразуем массив из строки с типом данных char 
+        char firstLetter = fullName2[0]; 
+        for (char i = 0; i &lt; fullName2.length; i++) { 
+            if  (fullName2[i] == ' ') { 
+                int indexLetter = fullName2.indexOf(' '); 
+              /*  char nextLetter =  fullName2[i+1]; 
+ 
+                char othersLetter = new char(firstLetter + nextLetter); 
+               // fullName2 =  fullName2[0] ; 
+            } 
+            System.out.println(indexLetter); 
+        } 
+    } 
+} 
+*/</span>
+     <span class="s4">/* задача по определению слов которые читают аналагочно задом наперед 
+ 
+ 
+        String target = &quot;rotatorA&quot;; //Исходная строка 
+        StringBuilder myStringBuilder = new StringBuilder(target); // создаем метод и переменную СтрингБилдер из прошлой строки 
+        StringBuilder myReverse = myStringBuilder.reverse(); // создаем переменную май реверс и реверсиуем предыдущее занчение 
+        String myReversedString = myReverse.toString(); // создаем строку из myReverse 
+        Boolean  zombee = false; 
+        if (myReversedString.equals(target)) { 
+            zombee = true; 
+        } 
+        System.out.println(zombee); // 
+    } 
+} 
+        /* 
+        myRevese.append(target) 
+        StringBuilder myRevese = target.reverse(); 
+        String myRevesed = myRevese.toString(); 
+        System.out.println(myRevesed); 
+*/</span>
+       <span class="s4">/* 
+        String target = &quot;rotator&quot;; 
+        StringBuilder target = new StringBuilder(); 
+        StringBuilder myRevese = new StringBuilder(); 
+        String targetRevers = target.revers(); 
+        if (target == targetRevers) { 
+            System.out.println(targetRevers); 
+        } 
+ 
+        */</span>
+
+
+
+
+
+
+
+
+     <span class="s4">/* определяем процентное соотношение цифры 1 по отношению к общему количеству цифр 
+ 
+        String statistic = &quot;0000111111111111&quot;; 
+        char[] StatisticArray = statistic.toCharArray(); // перевел строку в массив - с типом данных char 
+        double amountStudents = StatisticArray.length; // количество студентов 
+        double understood = 0; 
+        double percentMy = 0; 
+        if (statistic.isEmpty() == true) { 
+            percentMy = 0; 
+        } else { 
+            for (char i : StatisticArray) { 
+                if (i == '1') understood++; 
+                percentMy = understood / amountStudents; 
+            } 
+        } 
+        System.out.println(percentMy); 
+    } 
+} 
+ 
+*/</span></pre>
+</body>
+</html>
