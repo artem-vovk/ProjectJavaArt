@@ -1,10 +1,56 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        while (true) {
+            Scanner myScanner = new Scanner(System.in);
+            System.out.print("НОВОЕ СРАВНЕНИЕ:" + "\n" + "Введите первое число -->> ");
+            int num1 = myScanner.nextInt();
+            System.out.print("Введите второе число -->> ");
+            int num2 = myScanner.nextInt();
+            String result = myFunction(num1, num2);
+            if (num1 == num2) {
+                System.out.println("Первое число" + result + "второму" + "\n");
+            } else {
+                System.out.println("Первое число" + result + "второго" + "\n");
+            }
+        }
+    }
+
+    public static String myFunction(int a, int b) {
+        if (a == b){
+            return " = ";
+        } else if (a < b) {
+            return " < ";
+        } else {
+            return " > ";
+        }
+
+    }
+}
+
+        /* сравнение чисел и возврат знаков " < " " > "  или " = "
+        int num1 = 22;
+        int num2 = -22;
+        String result = myFunction(num1, num2);
+        System.out.println(result);
+    }
+    public static String myFunction(int a, int b) {
+        if (a == b){
+            return " = ";
+        } else if (a < b) {
+            return " < ";
+        } else {
+            return " > ";
+        }
+
+    }
+}
+
 
         /* непонятная для меня тема
         int a = 9;
